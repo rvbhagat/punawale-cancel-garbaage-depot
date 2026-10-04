@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Punawale | Cancel Proposed Garbage Depot Location</title>
+<meta name="description" content="Community e-sign campaign requesting reconsideration and cancellation of the proposed garbage depot location at Survey Nos. 23 and 26, Punawale, PCMC.">
+<style>
+:root{--green:#176b45;--dark:#123126;--light:#f4faf7;--accent:#e8a317;--danger:#b42318}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,sans-serif;color:#17221d;background:#f5f7f6}
+header{background:linear-gradient(135deg,#0e4d34,#238457);color:#fff;padding:56px 20px 46px}
+.wrap{max-width:980px;margin:auto}
+.badge{display:inline-block;background:rgba(255,255,255,.16);padding:8px 13px;border-radius:999px;font-size:13px;font-weight:700}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:18px 0 14px}
+.lead{font-size:19px;line-height:1.6;max-width:780px;color:#eaf7f0}
+main{padding:28px 16px 60px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:#fff;border-radius:18px;padding:26px;box-shadow:0 8px 30px rgba(18,49,38,.08);margin-bottom:22px}
+h2{color:var(--dark);margin-top:0}.points{display:grid;gap:13px}.point{padding:15px;background:var(--light);border-left:4px solid var(--green);border-radius:8px;line-height:1.5}
+label{display:block;font-weight:700;margin:15px 0 7px}input,select{width:100%;padding:13px 14px;border:1px solid #cbd7d1;border-radius:9px;font-size:16px;background:#fff}
+.sig-wrap{border:1px solid #b9c9c1;border-radius:10px;overflow:hidden;background:#fff;position:relative}
+canvas{display:block;width:100%;height:190px;touch-action:none;cursor:crosshair}
+.sig-note{font-size:12px;color:#64736c;padding:7px 10px;border-top:1px solid #e5ebe8}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+button{border:0;border-radius:9px;padding:12px 16px;font-size:15px;font-weight:700;cursor:pointer}
+.clear{background:#edf2ef;color:#244238}.submit{width:100%;background:var(--green);color:#fff;padding:15px;font-size:17px;margin-top:18px}.submit:disabled{opacity:.6;cursor:not-allowed}
+.checkbox{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-weight:400;line-height:1.45}.checkbox input{width:auto;margin-top:4px}
+.status{display:none;margin-top:15px;padding:13px;border-radius:9px;font-weight:600}.success{background:#e9f8ef;color:#176b45}.error{background:#fff0ef;color:var(--danger)}
+.small{font-size:12px;color:#6a7771;line-height:1.5}.footer{text-align:center;color:#68766f;font-size:13px;margin-top:22px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.card{padding:20px}header{padding-top:38px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<span class="badge">COMMUNITY E-SIGN CAMPAIGN • PUNAWALE, PCMC</span>
+<h1>Protect Punawale’s Future</h1>
+<p class="lead"><strong>Demand to cancel the proposed garbage depot location at Survey Nos. 23 and 26, Punawale.</strong><br>
+Residents are coming together to demand cancellation of the proposed location because of concerns about its proximity to educational institutions, the surrounding residential population, traffic and the potential long-term health and environmental impact.</p>
+</div>
+</header>
+
+<main>
+<div class="wrap">
+<div class="grid">
+<section class="card">
+<h2>Why we are raising this concern</h2>
+<div class="points">
+<div class="point">🏫 <strong>Children & schools:</strong> Residents are concerned about the potential impact of waste-related odour, air quality, pests and other environmental factors on children and nearby educational institutions.</div>
+<div class="point">🏘️ <strong>Densely populated area:</strong> The proposed area is surrounded by a growing residential community and significant daily activity.</div>
+<div class="point">🌱 <strong>Environment & public health:</strong> A garbage facility can create long-term concerns relating to odour, waste handling, traffic, pests, air and water quality if not appropriately located and managed.</div>
+<div class="point">📍 <strong>Cancellation of proposed location:</strong> We demand that the proposed garbage depot at Survey Nos. 23 and 26 be cancelled and that this proposed location not be used for the garbage depot.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>Sign the petition</h2>
+<p>By signing below, you are expressing your support for cancelling the proposed garbage depot location at Survey Nos. 23 and 26, Punawale.</p>
+
+<form id="petitionForm">
+<label for="name">Full name *</label>
+<input id="name" name="name" required maxlength="100" autocomplete="name" placeholder="Enter your full name">
+
+<label for="mobile">Mobile number *</label>
+<input id="mobile" name="mobile" required maxlength="15" inputmode="tel" autocomplete="tel" placeholder="Enter your mobile number">
+
+<label for="email">Email (optional)</label>
+<input id="email" name="email" type="email" maxlength="150" autocomplete="email" placeholder="Enter your email">
+
+<label for="area">Area / locality *</label>
+<input id="area" name="area" required maxlength="120" placeholder="e.g. Punawale">
+
+<label for="signature">Your e-signature *</label>
+<div class="sig-wrap">
+<canvas id="signature"></canvas>
+<div class="sig-note">Sign using your finger on mobile or your mouse on desktop.</div>
+</div>
+<div class="actions">
+<span class="small">Please sign clearly inside the box.</span>
+<button type="button" class="clear" id="clearBtn">Clear signature</button>
+</div>
+
+<label class="checkbox">
+<input type="checkbox" id="consent" required>
+<span>I voluntarily support this community petition and consent to my submitted details being recorded for the purpose of this e-sign campaign and presented to the relevant authorities.</span>
+</label>
+
+<button class="submit" id="submitBtn" type="submit">✍️ Submit My E-Signature</button>
+<div id="status" class="status"></div>
+</form>
+</section>
+</div>
+
+<section class="card">
+<h2>Our request</h2>
+<p>We demand that the <strong>PCMC and other concerned authorities</strong> <strong>cancel the proposed garbage depot location at Survey Nos. 23 and 26, Punawale</strong>. The proposed location is near schools and a densely populated area, and residents are concerned about potential long-term health, environmental, traffic, odour, waste-management and public-safety impacts.</p>
+<p class="small">This campaign is a community representation demanding cancellation of the proposed garbage depot location. It does not make a medical or environmental finding.</p>
+</section>
+
+<div class="footer">Community e-sign campaign • Punawale, PCMC</div>
+</div>
+</main>
+
+<script>
+// IMPORTANT: Paste your deployed Google Apps Script Web App URL here.
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHH2MuGUdW0TcwfuTWbnYDAQe_M_yU3jta3jmKpABaDaNkT-iY9rbKlWrqDM94ooXWtw/exec";
+
+const canvas = document.getElementById("signature");
+const ctx = canvas.getContext("2d");
+let drawing = false, hasSignature = false;
+
+function resizeCanvas() {
+  const ratio = Math.max(window.devicePixelRatio || 1, 1);
+  const rect = canvas.getBoundingClientRect();
+  const old = canvas.toDataURL();
+  canvas.width = rect.width * ratio;
+  canvas.height = 190 * ratio;
+  ctx.scale(ratio, ratio);
+  ctx.lineWidth = 2.2;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.strokeStyle = "#17221d";
+  if (old && old !== "data:,") {
+    const img = new Image();
+    img.onload = () => ctx.drawImage(img, 0, 0, rect.width, 190);
+    img.src = old;
+  }
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+function pos(e) {
+  const r = canvas.getBoundingClientRect();
+  const p = e.touches ? e.touches[0] : e;
+  return {x:p.clientX-r.left,y:p.clientY-r.top};
+}
+function start(e){e.preventDefault();drawing=true;hasSignature=true;const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y)}
+function move(e){if(!drawing)return;e.preventDefault();const p=pos(e);ctx.lineTo(p.x,p.y);ctx.stroke()}
+function end(){drawing=false}
+canvas.addEventListener("mousedown",start); canvas.addEventListener("mousemove",move); window.addEventListener("mouseup",end);
+canvas.addEventListener("touchstart",start,{passive:false}); canvas.addEventListener("touchmove",move,{passive:false}); canvas.addEventListener("touchend",end);
+
+document.getElementById("clearBtn").onclick=()=>{
+  const r=canvas.getBoundingClientRect(); ctx.clearRect(0,0,r.width,190); hasSignature=false;
+};
+
+const form=document.getElementById("petitionForm"), status=document.getElementById("status"), btn=document.getElementById("submitBtn");
+function showStatus(msg,ok){status.style.display="block";status.className="status "+(ok?"success":"error");status.textContent=msg;}
+
+form.addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  if (GOOGLE_SCRIPT_URL.includes("PASTE_YOUR")) {
+    showStatus("The campaign form is not connected yet. Please complete the Google Apps Script setup in the README.", false); return;
+  }
+  if (!hasSignature) { showStatus("Please add your e-signature before submitting.", false); return; }
+
+  btn.disabled=true; btn.textContent="Submitting…";
+  const payload={
+    name:document.getElementById("name").value.trim(),
+    mobile:document.getElementById("mobile").value.trim(),
+    email:document.getElementById("email").value.trim(),
+    area:document.getElementById("area").value.trim(),
+    consent:document.getElementById("consent").checked,
+    signature:canvas.toDataURL("image/png")
+  };
+  try{
+    const res=await fetch(GOOGLE_SCRIPT_URL,{method:"POST",mode:"cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+    const data=await res.json();
+    if(data.ok){
+      showStatus("Thank you. Your e-signature has been recorded successfully.",true);
+      form.reset();
+      document.getElementById("clearBtn").click();
+    } else throw new Error(data.error||"Submission failed");
+  }catch(err){
+    showStatus("Unable to submit right now. Please try again. If the problem continues, contact the campaign administrator.",false);
+  }finally{
+    btn.disabled=false; btn.textContent="✍️ Submit My E-Signature";
+  }
+});
+</script>
+</body>
+</html>
